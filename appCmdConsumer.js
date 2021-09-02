@@ -1,11 +1,12 @@
 const WebSocketServer = require('websocket').server;
 const http = require('http');
 const kafka = require('kafka-node');
+
 const Consumer = kafka.Consumer,
     client = new kafka.KafkaClient("localhost:2181"),
     consumer = new Consumer(
         client, [{
-            topic: 'java_in_use_topic', partition: 0
+            topic: 'cmd_mathilda', partition: 0
         }],
         { autoCommit: false }
     );
